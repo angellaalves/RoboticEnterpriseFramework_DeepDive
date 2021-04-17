@@ -2,7 +2,7 @@
   <x:Members>
     <x:Property Name="arg_in_CredentialUidemo" Type="InArgument(x:String)" />
   </x:Members>
-  <sap:VirtualizedContainerService.HintSize>1240,1257</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1054,1071</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="42">
@@ -57,7 +57,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="UiDemo_LoginXaml" sap:VirtualizedContainerService.HintSize="476,1192" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="UiDemo_LoginXaml" sap:VirtualizedContainerService.HintSize="476,1006" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="var_strUserNameUiDemo" />
       <Variable x:TypeArguments="ss:SecureString" Name="var_strPasswordUiDemo" />
@@ -69,38 +69,16 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:Comment sap:VirtualizedContainerService.HintSize="434,55" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Login UiDemo" />
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="AttachWindow_UiDemo" sap:VirtualizedContainerService.HintSize="434,292" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="22b62e2d7cfc717c8d269f2df12cac85" Selector="&lt;wnd app='explorer.exe' cls='WorkerW' idx='*' /&gt;">
-      <ui:WindowScope.Body>
+    <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="OpenApplication_UiDemo" FileName="C:\Users\Angela Alves\OneDrive\Área de Trabalho\uidemo.exe" sap:VirtualizedContainerService.HintSize="434,225" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="3e793f4a15726d6e80ceca9ece1ecefc" Selector="&lt;wnd app='uidemo.exe' cls='HwndWrapper*' title='UiDemo' /&gt;">
+      <ui:OpenApplication.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <ui:Click AlterIfDisabled="{x:Null}" CursorMotionType="{x:Null}" DelayBefore="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_DOUBLE" DelayMS="10" DisplayName="Click_UIDemoApp" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="False">
-            <ui:Click.CursorPosition>
-              <ui:CursorPosition Position="Center">
-                <ui:CursorPosition.OffsetX>
-                  <InArgument x:TypeArguments="x:Int32" />
-                </ui:CursorPosition.OffsetX>
-                <ui:CursorPosition.OffsetY>
-                  <InArgument x:TypeArguments="x:Int32" />
-                </ui:CursorPosition.OffsetY>
-              </ui:CursorPosition>
-            </ui:Click.CursorPosition>
-            <ui:Click.Target>
-              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="6dbecb2b-fe5a-4452-8db0-e09bcd3f6cbc" InformativeScreenshot="c89c664be3290f26000a8bb7c02dce75" Selector="&lt;wnd app='explorer.exe' cls='WorkerW' idx='*' /&gt;&lt;wnd cls='SysListView32' title='FolderView' /&gt;&lt;ctrl name='UIDemo' role='list item' /&gt;">
-                <ui:Target.TimeoutMS>
-                  <InArgument x:TypeArguments="x:Int32" />
-                </ui:Target.TimeoutMS>
-                <ui:Target.WaitForReady>
-                  <InArgument x:TypeArguments="ui:WaitForReady" />
-                </ui:Target.WaitForReady>
-              </ui:Target>
-            </ui:Click.Target>
-          </ui:Click>
+          <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[arg_in_CredentialUidemo]" DisplayName="Get Credential" FolderPath="LearningProject" sap:VirtualizedContainerService.HintSize="284,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[var_strPasswordUiDemo]" Username="[var_strUserNameUiDemo]" />
         </ActivityAction>
-      </ui:WindowScope.Body>
-    </ui:WindowScope>
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[arg_in_CredentialUidemo]" DisplayName="Get Credential" FolderPath="LearningProject" sap:VirtualizedContainerService.HintSize="434,79" sap2010:WorkflowViewState.IdRef="GetRobotCredential_2" Password="[var_strPasswordUiDemo]" Username="[var_strUserNameUiDemo]" />
+      </ui:OpenApplication.Body>
+    </ui:OpenApplication>
     <Assign DisplayName="Assign_AuxPassword" sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[var_strPasswordUiDemoSemCripto]</OutArgument>
